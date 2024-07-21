@@ -14,6 +14,10 @@ const chatModel = mongoose.Schema(
   { timestamps: true }
 );
 
+// Define indexes
+chatModel.index({ users: 1 }); // Creates an index on the users field
+chatModel.index({ isGroupChat: 1 }); // Creates an index on the isGroupChat field
+
 const Chat = mongoose.model("Chat", chatModel);
 
 module.exports = Chat;
